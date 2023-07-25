@@ -1,0 +1,22 @@
+
+# Data
+# General config
+
+DBDriverClass : org.postgresql.Driver
+DBDialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Users' db credentials
+
+usersDBUrl : jdbc:postgresql://localhost:5432/monitoringappusersdb?useSSL=false&serverTimezone=UTC
+usersDBUsername : monitoringappusersdbdirector
+usersDBPassword : monitoringapp720130
+
+usersDBSchema : users
+
+# Data's db credentials
+
+dataDBUrl : jdbc:postgresql://localhost:5432/monitoringappdatadb?useSSL=false&serverTimezone=UTC
+dataDBUsername : monitoringappdatadbdirector
+dataDBPassword : monitoringapp720130
+
+dataDBSchema: data

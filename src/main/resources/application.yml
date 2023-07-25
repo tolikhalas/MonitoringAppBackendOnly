@@ -1,0 +1,30 @@
+
+spring:
+
+  # Core configs (Profiles)
+  profiles:
+    active: "dev"
+
+  # Spring Data config
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: ${ DBDialect }
+
+  # User's db source
+  auditors-datasource:
+    url: ${ usersDBUrl }
+    username: ${ monitoringappusersdbdirector }
+    password: ${ usersDBPassword }
+
+    driver-class-name: ${ DBDriverClass }
+
+  # Data's db sours
+  data-datasource:
+    url: ${ dataDBUrl }
+    username: ${ monitoringappdatadbdirector }
+    password: ${ dataDBPassword }
+
+    driver-class-name: ${ DBDriverClass }
