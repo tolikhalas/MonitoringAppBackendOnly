@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(schema = "data", name = "pledge_content_vehicles")
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor

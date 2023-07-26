@@ -23,7 +23,7 @@ public class ClientLocation extends Location {
     @Column(name = "client_id")
     private Long clientId;
 
-    @OneToMany(mappedBy = "ClientLocation", fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Client> clients;
 
 }

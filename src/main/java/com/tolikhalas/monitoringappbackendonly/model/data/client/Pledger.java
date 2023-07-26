@@ -13,14 +13,12 @@ import java.util.Set;
  * Class that represents "Заставодавець"
  */
 @Entity(name = "pledger")
-@Table(schema = "data", name = "pledgers")
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pledger extends Client {
 
-    @OneToMany(mappedBy = "pledgers", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "pledge_object_id")
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<PledgeObject> pledgeObjects;
 }

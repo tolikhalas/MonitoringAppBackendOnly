@@ -25,7 +25,7 @@ public class Deal {
 
     private LocalDate dealDate;
 
-    @OneToMany(mappedBy = "Deal", fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<PledgeObject> pledgeObject;
 
 }

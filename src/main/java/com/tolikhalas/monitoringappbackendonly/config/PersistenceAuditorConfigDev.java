@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 @Configuration
 @Profile({"dev"})
-@PropertySource({ "classpath:application.yml" })
+@PropertySource({"classpath:application.yml", "classpath:application-dev.yml"})
 @EnableJpaRepositories(
         basePackages = "com.tolikhalas.monitoringappbackendonly.repository.auth",
         entityManagerFactoryRef = "auditorEntityManager",
@@ -43,7 +43,7 @@ public class PersistenceAuditorConfigDev {
         em.setJpaVendorAdapter(vendorAdapter);
         HashMap<String, Object> properties = new HashMap<>();
         properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-        properties.put("hibernate.dialect", env.getProperty("usersDBDialect"));
+        properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
         em.setJpaPropertyMap(properties);
 
         return em;

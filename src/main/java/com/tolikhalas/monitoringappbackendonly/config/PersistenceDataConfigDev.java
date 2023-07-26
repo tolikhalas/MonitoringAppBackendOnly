@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 @Configuration
 @Profile({"dev"})
-@PropertySource({"classpath:application.dev.yml", "classpath:application.yml"})
+@PropertySource({"classpath:application-dev.yml", "classpath:application.yml"})
 @EnableJpaRepositories(
         basePackages = "com.tolikhalas.monitoringappbackendonly.repository.data",
         entityManagerFactoryRef = "dataEntityManager",
@@ -45,7 +45,7 @@ public class PersistenceDataConfigDev {
 
         HashMap<String, Object> properties = new HashMap<>();
         properties.put("hibernate.hbm2ddl.auto", env.getProperty( "hibernate.hbm2ddl.auto" ));
-        properties.put("hibernate.dialect", env.getProperty("dataDBDialect"));
+        properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
         em.setJpaPropertyMap(properties);
 
         return em;

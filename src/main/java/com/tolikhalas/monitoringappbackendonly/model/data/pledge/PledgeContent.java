@@ -5,9 +5,9 @@ import com.tolikhalas.monitoringappbackendonly.model.data.location.PledgeLocatio
 import com.tolikhalas.monitoringappbackendonly.model.data.pledge.type.PledgeType;
 import jakarta.persistence.*;
 
-@Entity(name = "pledgeContent")
+@Entity
 @Table(schema = "data", name = "pledge_contents")
-@MappedSuperclass
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class PledgeContent {
 
     @Id
@@ -20,6 +20,7 @@ public abstract class PledgeContent {
 
     protected String additionalNotes;
 
-    @ManyToOne
+    @ManyToOne()
     protected PledgeObject pledgeObject;
+
 }

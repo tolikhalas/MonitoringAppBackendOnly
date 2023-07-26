@@ -22,11 +22,9 @@ public class PledgeObject {
     private Long pledgeObjectId;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
     private Client pledger;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
     private Client borrower;
 
     @ManyToOne
@@ -35,7 +33,7 @@ public class PledgeObject {
     @ManyToOne
     private Deal pledge;
 
-    @OneToMany(mappedBy = "PledgeObject", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "pledgeObject", fetch = FetchType.EAGER)
     private Set<PledgeContent> contents;
 
 }

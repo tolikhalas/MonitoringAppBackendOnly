@@ -11,20 +11,23 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: ${ DBDialect }
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
 
   # User's db source
   auditors-datasource:
-    url: ${ usersDBUrl }
-    username: ${ monitoringappusersdbdirector }
-    password: ${ usersDBPassword }
+    jdbc-url: jdbc:postgresql://localhost:5432/monitoringappusersdb?useSSL=false&serverTimezone=UTC
+    username: monitoringappusersdbdirector
+    password: monitoringapp720130
 
-    driver-class-name: ${ DBDriverClass }
+    driver-class-name: org.postgresql.Driver
+
 
   # Data's db sours
   data-datasource:
-    url: ${ dataDBUrl }
-    username: ${ monitoringappdatadbdirector }
-    password: ${ dataDBPassword }
+    jdbc-url: jdbc:postgresql://localhost:5432/monitoringappdatadb?useSSL=false&serverTimezone=UTC
+    username: monitoringappdatadbdirector
+    password: monitoringapp720130
 
-    driver-class-name: ${ DBDriverClass }
+    driver-class-name: org.postgresql.Driver

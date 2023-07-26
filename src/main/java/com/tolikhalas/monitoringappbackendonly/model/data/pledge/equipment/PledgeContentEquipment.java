@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(schema = "data", name = "pledge_content_equipments")
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor

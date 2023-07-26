@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
  * Class that represents "Позичальник"
  */
 @Entity(name = "borrower")
-@Table(schema = "data", name = "borrowers")
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Borrower extends Client {
